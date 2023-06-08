@@ -89,7 +89,9 @@ namespace API.Controllers
 
 
             var currentMain = user.Photos.FirstOrDefault(x => x.IsMain);
-            if(currentMain != null) currentMain.IsMain = false;
+            if(currentMain != null) 
+               currentMain.IsMain = false;
+
             photo.IsMain = true;
 
             if(await _userRepository.SaveAllAsync()) return NoContent();
